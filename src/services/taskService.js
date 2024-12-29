@@ -5,7 +5,6 @@ export const fetchTasks = async () => {
     const response = await axios.get("/api/tasks");
     return response.data.tasks;
   } catch (error) {
-    console.error(error);
     throw new Error("Error fetching tasks");
   }
 };
@@ -13,27 +12,24 @@ export const fetchTasks = async () => {
 export const createTask = async (task) => {
   try {
     const response = await axios.post("/api/tasks", task);
+    return response.data.task;
   } catch (error) {
-    console.error(error);
     throw new Error("Error adding task");
-  }
   }
 };
 
 export const updateTask = async (taskId, task) => {
   try {
+    const response = await axios.put(`/api/tasks/${taskId}`, task);
+    return response.data.task;
   } catch (error) {
-    console.error(error);
-    throw new Error("Error updating task");
-  }
     throw new Error("Error updating task");
   }
 };
 
-  } catch (error) {
-    console.error(error);
-    throw new Error("Error deleting task");
-  }
+export const deleteTask = async (taskId) => {
+  try {
+    await axios.delete(`/api/tasks/${taskId}`);
   } catch (error) {
     throw new Error("Error deleting task");
   }

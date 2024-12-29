@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --coverage",
-    "vercel-build": "npm run prepare && next build"
+    "vercel-build": "next build"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

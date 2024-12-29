@@ -1,18 +1,6 @@
 import React from "react";
 
-interface DeleteModalProps {
-  isOpen: boolean;
-  message: string;
-  onConfirm: () => void;
-  onCancel: () => void;
-}
-
-const DeleteModal: React.FC<DeleteModalProps> = ({
-  isOpen,
-  message,
-  onConfirm,
-  onCancel,
-}) => {
+const DeleteModal = ({ isOpen, message, onConfirm, onCancel }) => {
   if (!isOpen) return null;
 
   return (

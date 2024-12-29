@@ -1,4 +1,5 @@
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/solid";
+import React from "react";
 
 const TaskCard = ({ task, handleEditTask, handleDelete }) => {
   const getPriorityClass = (priority) => {

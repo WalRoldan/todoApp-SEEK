@@ -1,3 +1,7 @@
 module.exports = {
-  presets: ["@babel/preset-env", "@babel/preset-react"],
+  presets: [
+    "next/babel", // Esto ya debería estar aquí si usas Next.js
+    "@babel/preset-react",
+  ],
+  plugins: [],
 };

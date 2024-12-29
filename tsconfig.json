@@ -30,7 +30,9 @@
     "next.config.mjs",
     "src/components/TaskList.jsx",
     "src/app/auth/page.js",
-    "src/app/page.tsx"
+    "src/app/page.tsx",
+    "src/components/DeleteModal.jsx",
+    "src/app/layout.jsx"
   ],
   "exclude": ["node_modules"]
 }

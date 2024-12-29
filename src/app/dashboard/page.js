@@ -2,7 +2,7 @@
 
 import TaskList from "../../components/TaskList";
 import useAuthStore from "../../store/authStore";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Dashboard() {

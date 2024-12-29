@@ -27,6 +27,7 @@ const useTasks = () => {
         const fetchedTasks = await fetchTasks();
         fetchedTasks.forEach((task) => addTask(task));
       } catch (error) {
+        console.error(error);
         toast.error("Error fetching tasks");
       } finally {
         setLoading(false);

@@ -7,7 +7,6 @@ import React from "react";
 export default function TaskList() {
   const {
     tasks,
-    loading,
     handleAddTask,
     handleUpdateTask,
     handleDelete,

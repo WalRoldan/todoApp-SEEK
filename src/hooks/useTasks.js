@@ -2,12 +2,7 @@ import { useState, useEffect } from "react";
 import useTaskStore from "../store/taskStore";
 import axios from "../mocks/axiosMock";
 
-import {
-  fetchTasks,
-  createTask,
-  updateTask,
-  deleteTask,
-} from "../services/taskService";
+import { fetchTasks } from "../services/taskService";
 import { toast } from "react-toastify";
 
 const useTasks = () => {

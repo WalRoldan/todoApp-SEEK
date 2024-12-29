@@ -56,6 +56,9 @@ const ModalTask = ({
               }
               className="border px-4 py-2 rounded-lg w-full mt-1"
             >
+              <option value="" disabled>
+                Select Status
+              </option>
               <option value="to-do">To Do</option>
               <option value="doing">Doing</option>
               <option value="done">Done</option>
@@ -72,6 +75,9 @@ const ModalTask = ({
               }
               className="border px-4 py-2 rounded-lg w-full mt-1"
             >
+              <option value="" disabled>
+                Select Priority
+              </option>
               <option value="low">Low</option>
               <option value="medium">Medium</option>
               <option value="high">High</option>

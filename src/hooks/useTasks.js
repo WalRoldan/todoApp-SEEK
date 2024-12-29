@@ -6,7 +6,7 @@ import { fetchTasks } from "../services/taskService";
 import { toast } from "react-toastify";
 
 const useTasks = () => {
-  const { tasks, addTask, updateTask, deleteTask } = useTaskStore();
+  const { tasks, addTask, updateTask, deleteTask, clearTasks } = useTaskStore();
   const [loading, setLoading] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,13 +17,14 @@ const useTasks = () => {
     title: "",
     description: "",
     priority: "",
-    status: "to-do",
+    status: "",
   });
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   useEffect(() => {
     const loadTasks = async () => {
       setLoading(true);
       try {
+        clearTasks();
         const fetchedTasks = await fetchTasks();
         fetchedTasks.forEach((task) => addTask(task));
       } catch (error) {
@@ -37,8 +38,21 @@ const useTasks = () => {
   }, [addTask]);
 
   const handleAddTask = async () => {
-    if (!newTask.title || !newTask.description || !newTask.priority) {
-      alert("All fields are required!");
+    if (!newTask.title) {
+      toast.error("Title is required!");
+
+      return;
+    }
+    if (!newTask.description) {
+      toast.error("Description is required!");
+      return;
+    }
+    if (!newTask.status) {
+      toast.error("Status is required!");
+      return;
+    }
+    if (!newTask.priority) {
+      toast.error("Priority is required!");
       return;
     }
     try {

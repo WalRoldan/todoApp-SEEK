@@ -1,14 +1,18 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import useAuthStore from "@/store/authStore";
-
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
   const setAuth = useAuthStore((state) => state.setAuth);
+  const resetAuth = useAuthStore((state) => state.resetAuth);
+
+  useEffect(() => {
+    resetAuth(); // Limpia el estado cuando regresas al login
+  }, [resetAuth]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

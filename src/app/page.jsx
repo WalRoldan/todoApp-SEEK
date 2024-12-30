@@ -11,7 +11,7 @@ export default function LoginPage() {
   const resetAuth = useAuthStore((state) => state.resetAuth);
 
   useEffect(() => {
-    resetAuth(); // Limpia el estado cuando regresas al login
+    resetAuth();
   }, [resetAuth]);
 
   const handleSubmit = (e) => {

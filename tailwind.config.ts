@@ -9,9 +9,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#4F46E5", // Color principal para botones y elementos destacados
-        secondary: "#E5E7EB", // Fondo secundario
-        danger: "#EF4444", // Color de advertencia
+        primary: "#4F46E5",
+        secondary: "#E5E7EB",
+        danger: "#EF4444",
       },
     },
   },
